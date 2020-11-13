@@ -231,6 +231,7 @@ def transformIMG(path):
     img = cv2.imread(path)
 
     # fotografı text haline ceviriyorum
+    
     txt = pytesseract.image_to_string(img)
 
     # olusturdugum text degiskenini geri donuyorum
@@ -321,8 +322,10 @@ def solver(path):
     zero2IMG(dirName)
     pathIMG = concatIMG(dirName)
     temp = transformIMG(pathIMG)
+    print(temp)
     matrix = txt2mat(temp)
     oldMatrix = copy.deepcopy(matrix)
-    removeFILES("temp")
+    # removeFILES("temp")
     solutionMatrix = solution_func(matrix)
     writeAnswer2IMG(img_name,path,xy,oldMatrix,solutionMatrix)
+solver("../trainingData/18.png")
