@@ -1,90 +1,6 @@
-import pytesseract, cv2, os, copy, shutil
+import pytesseract, cv2, os, copy, shutil, sys
 import numpy as np
-
-class Sudok():
-    def __init__(self,matrix):
-        self.matrix =  matrix
-        if self.control() : 
-            self.flag = self.solve()
-        else:
-            self.flag = False
-
-    def control(self):
-        for row in self.matrix:
-            for i in row:
-                if i<0 or i>9:
-                    return False
-
-        for row in self.matrix:
-            for i in row:
-                if i == 0:
-                    continue
-                if row.count(i) > 1 :
-                    return False
-
-        for i in range(9):
-            temp = []
-            for j in range(9):
-                temp.append(self.matrix[j][i])
-            for i in temp:
-                if i == 0:
-                    continue
-                if temp.count(i)>1:
-                    return False
-                
-        for x0 in [0,3,6]:
-            for y0 in [0,3,6]:
-
-                temp = []
-                for x in range(3):
-                    for y in range(3):
-                        temp.append(self.matrix[x+x0][y+y0])
-
-                for j in temp:
-                    if j == 0:
-                        continue
-                    if temp.count(j)>1:
-                        return False
-
-        return True
-            
-
-    def possible( self, row, col, num):
-        for i in range(9):
-            if self.matrix[row][i] == num:
-                return False
-            
-        for i in range(9):
-            if self.matrix[i][col] == num:
-                return False
-            
-        row0=(row//3)*3
-        col0=(col//3)*3
-        for i in range(3):
-            for j in range(3):
-                if self.matrix[row0+i][col0+j] == num :
-                    return False
-        return True
-
-    def solve(self, row=0, col=0):
-        if (row == 8) and (col == 9):
-            return True
-        
-        if col==9:
-            row += 1
-            col  = 0
-            
-        if (self.matrix[row][col] > 0):
-            return self.solve(row,col+1)
-        
-        for num in range(1,10):
-            if self.possible(row, col, num):
-                self.matrix[row][col] = num
-                if self.solve(row, col+1):
-                    return True
-                self.matrix[row][col] = 0
-
-        return False
+from decoderClass import Sudoku
 
 def cropIMG(path):
     try:
@@ -237,6 +153,43 @@ def transformIMG(path):
     # olusturdugum text degiskenini geri donuyorum
     return txt
 
+def transformIMG(path):
+    list1,list2=list(),list()
+    for i in sorted(os.listdir(path)):
+        img = cv2.imread(os.path.join(path,i))
+    
+        temp = pytesseract.image_to_string(img,
+            config='--oem 3 --psm 6 -c tessedit_char_whitelist=0123456789')
+        list1.append(temp.strip())
+    
+        temp = pytesseract.image_to_string(img,
+            config='--oem 3 --psm 13 -c tessedit_char_whitelist=0123456789')
+        list2.append(temp.strip())
+    i = 0
+    m = list()
+    while i < 81:
+        temp1,temp2=None,None
+        try:
+            temp1 = int(list1[i])         
+        except:
+            pass
+        try:
+            temp2 = int(list2[i]) 
+        except:
+            pass        
+
+        if temp1==temp2 and type(temp1)==int:
+            m.append(temp2)
+        elif type(temp1)==int :
+            m.append(temp1)
+        elif type(temp2)==int :
+            m.append(temp2)
+        else:
+            return False
+        i+=1
+    return m
+
+
 def txt2mat(temp):
 
     # gelen text dosyasındaki sayıları alıyorum
@@ -268,7 +221,7 @@ def removeFILES(path):
     shutil.rmtree(path)
 
 def solution_func(matrix):
-    solution = Sudok(matrix)
+    solution = Sudoku(matrix)
     if solution.flag:
         return solution.matrix
     else:
@@ -317,15 +270,20 @@ def writeAnswer2IMG(imgname,path,xy,mat1,mat2):
     cv2.imwrite(f"Solution/solution{imgname}.jpeg",img)
 
 def solver(path):
+
     dirName, xy, img_name = cropIMG(path)
     zero2IMG(dirName)
-    pathIMG = concatIMG(dirName)
-    temp = transformIMG(pathIMG)
+    # pathIMG = concatIMG(dirName)
+    # temp = transformIMG(pathIMG)
+    print(transformIMG(dirName))
+    temp = asd
+    print(temp)
     matrix = txt2mat(temp)
     oldMatrix = copy.deepcopy(matrix)
-    removeFILES("temp")
+    # removeFILES("temp")
     solutionMatrix = solution_func(matrix)
     writeAnswer2IMG(img_name,path,xy,oldMatrix,solutionMatrix)
+   
 
-
-
+if __name__=="__main__": 
+    solver("../trainingData/20.png")
