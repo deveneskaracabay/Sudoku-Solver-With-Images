@@ -8,9 +8,12 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from PyQt5.QtWidgets import QApplication, QWidget,QLabel
+from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QMovie
 
 class Ui_MainWindow(object):
+        
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(522, 620)
@@ -1161,6 +1164,8 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+        
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Sudoku Solver"))
@@ -1243,6 +1248,7 @@ class Ui_MainWindow(object):
         self.label.setText(_translate("MainWindow", "Created by Enes Karacabay"))
         self.Button_2.setText(_translate("MainWindow", "RESET"))
         self.Button_3.setText(_translate("MainWindow", "OPEN"))
+
 
 
 if __name__ == "__main__":

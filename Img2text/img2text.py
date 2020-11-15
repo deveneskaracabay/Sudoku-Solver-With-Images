@@ -1,4 +1,4 @@
-import pytesseract, cv2, os, copy, shutil
+import pytesseract, cv2, os, copy, shutil, sys
 import numpy as np
 
 class Sudok():
@@ -245,6 +245,9 @@ def txt2mat(temp):
         if i in "0123456789":
             text = text + i
 
+        if i == "~":
+            text = text + "7"
+
     # aldıgım sayıları 9 satıra boluyorum
     temp_list = []
     for i in range(0,73,9):
@@ -253,16 +256,61 @@ def txt2mat(temp):
     # tum satirlari int degerlere ceviriyorum 
     matrix = [[] for j in range(9)]
     i = 0
-    while i<9:
-        matrix[i][:0] = temp_list[i] 
-        j=0
-        while j<9:
-            matrix[i][j] = int(matrix[i][j])
-            j+=1
-        i += 1
-
+    try:
+        while i<9:
+            matrix[i][:0] = temp_list[i] 
+            j=0
+            while j<9:
+                matrix[i][j] = int(matrix[i][j])
+                j+=1
+            i += 1
+    except:
+        return False
     # Olusturdugum int matrixi donuyorum
     return matrix
+
+def transformIMG2(path):
+    list1,list2=list(),list()
+    for i in sorted(os.listdir(path)):
+        img = cv2.imread(os.path.join(path,i))
+    
+        temp = pytesseract.image_to_string(img,
+            config='--oem 3 --psm 6 -c tessedit_char_whitelist=0123456789')
+        list1.append(temp.strip())
+    
+        temp = pytesseract.image_to_string(img,
+            config='--oem 3 --psm 13 -c tessedit_char_whitelist=0123456789')
+        list2.append(temp.strip())
+    i = 0
+    m = list()
+    while i < 81:
+        temp1,temp2=None,None
+        try:
+            temp1 = int(list1[i])         
+        except:
+            pass
+        try:
+            temp2 = int(list2[i]) 
+        except:
+            pass        
+
+        if temp1==temp2 and type(temp1)==int:
+            m.append(temp2)
+        elif type(temp1)==int :
+            m.append(temp1)
+        elif type(temp2)==int :
+            m.append(temp2)
+        else:
+            return False
+        i+=1
+    return m
+
+def editMatrix(matrix):
+    temp_mat = [[] for i in range(9)]
+    for i in range(9):
+        for j in range(9):
+            temp_mat[i].append(matrix[i*9+j])
+    return temp_mat
 
 def removeFILES(path):
     shutil.rmtree(path)
@@ -272,7 +320,7 @@ def solution_func(matrix):
     if solution.flag:
         return solution.matrix
     else:
-        print("hatalı işlem")
+        return False
 
 def writeAnswer2IMG(imgname,path,xy,mat1,mat2):
     try:
@@ -313,19 +361,58 @@ def writeAnswer2IMG(imgname,path,xy,mat1,mat2):
             cnt+=1
             i+=1
         j+=1
+    path = f"Solution/solution{imgname}.jpeg"
+    cv2.imwrite(path,img)
+    return path
 
-    cv2.imwrite(f"Solution/solution{imgname}.jpeg",img)
+def showSolution(path):
+    img = cv2.imread(path)
+    cv2.namedWindow("Solution")
+
+    cv2.imshow("Solution",img)
+    
+    cv2.waitKey(0)
+
+    cv2.destroyWindow("Solution")
+
 
 def solver(path):
+
     dirName, xy, img_name = cropIMG(path)
     zero2IMG(dirName)
     pathIMG = concatIMG(dirName)
     temp = transformIMG(pathIMG)
     matrix = txt2mat(temp)
-    oldMatrix = copy.deepcopy(matrix)
+    if matrix:
+        oldMatrix = copy.deepcopy(matrix)
+        solutionMatrix = solution_func(matrix)
+        if not solutionMatrix:
+            matrix = transformIMG2(dirName)
+            if not matrix:
+                return False
+            matrix = editMatrix(matrix)
+            oldMatrix = copy.deepcopy(matrix)
+            solutionMatrix = solution_func(matrix)
+            if not solutionMatrix:
+                return False
+
+    else:
+        matrix = transformIMG2(dirName)
+        if not matrix:
+            return False
+        matrix = editMatrix(matrix)
+        oldMatrix = copy.deepcopy(matrix)
+        solutionMatrix = solution_func(matrix)
+        if not solutionMatrix:
+                return False
+    
+        
+    path = writeAnswer2IMG(img_name,path,xy,oldMatrix,solutionMatrix)
     removeFILES("temp")
-    solutionMatrix = solution_func(matrix)
-    writeAnswer2IMG(img_name,path,xy,oldMatrix,solutionMatrix)
+    showSolution(path)
+    return True
+   
 
-
-
+if __name__=="__main__": 
+    solver(input("enter your path for image :"))
+    
