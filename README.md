@@ -42,14 +42,14 @@ Programı çalıştırdığımızda bu ekranı görüntüleyeceğiz :
 <br/>
 <br/>
 <br/>
-Bu kısımda örnek olarak önceden hazırladığımız datasetteki 2.png dosyasını seçeçeğiz.
+Bu kısımda deneme amaçlı önceden hazırladığımız datasetteki "2.png" dosyasını seçelim.
 <br/>
 <br/>
 ![img2](https://github.com/deveneskaracabay/Sudoku-Solver-With-Images/blob/master/trainingDataset/2.png)
 <br/>
 <br/>
 <br/>
-Dosyayı seçtiğimizde programımız çalışarak bize çıktıyı bu şekilde verecektir:
+Dosyayı seçtiğimizde programımız bize bu çıktıyı verecektir:
 <br/>
 <br/>
 ![img3](https://github.com/deveneskaracabay/Sudoku-Solver-With-Images/blob/master/Images/3.png)
