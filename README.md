@@ -30,44 +30,44 @@ Bu klasoru bilgisayarınıza indirip komut satırını bu klasorde açıp
 ## Programdan Görüntüler
 Programı çalıştırdığımızda bu ekranı görüntüleyeceğiz :
 <br/>
+<br/>
 ![img1](https://github.com/deveneskaracabay/Sudoku-Solver-With-Images/blob/master/Images/1.png)
+<br/>
 <br/>
 <br/>
 **OPEN** butonuna basalım.
 <br/>
+<br/>
 ![img2](https://github.com/deveneskaracabay/Sudoku-Solver-With-Images/blob/master/Images/2.png)
+<br/>
 <br/>
 <br/>
 Bu kısımda örnek olarak önceden hazırladığımız datasetteki 2.png dosyasıne seçeçeğiz.
 <br/>
+<br/>
 ![img2](https://github.com/deveneskaracabay/Sudoku-Solver-With-Images/blob/master/trainingDataset/2.png)
+<br/>
 <br/>
 <br/>
 Dosyayı seçtiğimizde programımız çalışarak bize çıktıyı bu şekilde verecektir:
 <br/>
+<br/>
 ![img3](https://github.com/deveneskaracabay/Sudoku-Solver-With-Images/blob/master/Images/3.png)
+<br/>
 <br/>
 <br/>
 Datasetteki diğer **sudoku örneklerine [buradan](https://github.com/deveneskaracabay/Sudoku-Solver-With-Images/tree/master/trainingDataset)**
 ulaşabilirsiniz.
 <br/>
 <br/>
-Datasetin tamamının **çözümlerine** de [buradan](https://github.com/deveneskaracabay/Sudoku-Solver-With-Images/tree/master/Solution)
+<br/>
+Datasetin tamamının **çözümlerine** de **[buradan](https://github.com/deveneskaracabay/Sudoku-Solver-With-Images/tree/master/Solution)**
 ulaşabilirsiniz.
+<br/>
+<br/>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Eğer bu örnekteki gibi geçersiz bir dosya girdiğimizde ya da programın sudokuyu görememesi halinde bize bu çıktıyı verecektir.
+<br/>
+<br/>
+![img4](https://github.com/deveneskaracabay/Sudoku-Solver-With-Images/blob/master/Images/4.png)
+![img5](https://github.com/deveneskaracabay/Sudoku-Solver-With-Images/blob/master/Images/5.png)
