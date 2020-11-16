@@ -48,11 +48,11 @@ Dosyayı seçtiğimizde programımız çalışarak bize çıktıyı bu şekilde 
 ![img3](https://github.com/deveneskaracabay/Sudoku-Solver-With-Images/blob/master/Images/3.png)
 <br/>
 <br/>
-Datasetteki **diğer sudoku örneklerine [buradan](https://github.com/deveneskaracabay/Sudoku-Solver-With-Images/tree/master/trainingDataset)**
+Datasetteki diğer **sudoku örneklerine [buradan](https://github.com/deveneskaracabay/Sudoku-Solver-With-Images/tree/master/trainingDataset)**
 ulaşabilirsiniz.
 <br/>
 <br/>
-Datasetin tamamının **çözümlerine de [buradan](https://github.com/deveneskaracabay/Sudoku-Solver-With-Images/tree/master/Solution)**
+Datasetin tamamının **çözümlerine** de [buradan](https://github.com/deveneskaracabay/Sudoku-Solver-With-Images/tree/master/Solution)
 ulaşabilirsiniz.
 
 
