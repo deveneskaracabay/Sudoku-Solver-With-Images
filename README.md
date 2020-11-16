@@ -3,7 +3,6 @@
 <br/>
 
 ## Hedef
-<br/>
 Kullanıcı tarafından girilen bir sudoku fotoğrafının çözümünü gerçekleştirmek.
 <br/>
 
