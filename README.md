@@ -25,7 +25,7 @@ Kullanıcı tarafından girilen bir sudoku fotoğrafının çözümünü gerçek
 ## Gereklilikler
 
 Bu klasoru bilgisayarınıza indirip komut satırını bu klasorde açıp
-``pip install - r requirements.txt`` yazarak gerekli paketlere sahip olabilirsiniz.
+``pip install -r requirements.txt`` yazarak gerekli paketlere sahip olabilirsiniz.
 
 ## Programdan Görüntüler
 Programı çalıştırdığımızda bu ekranı görüntüleyeceğiz :
