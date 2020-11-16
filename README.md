@@ -60,7 +60,6 @@ Datasetteki diğer **sudoku örneklerine [buradan](https://github.com/deveneskar
 ulaşabilirsiniz.
 <br/>
 <br/>
-<br/>
 Datasetin tamamının **çözümlerine** de **[buradan](https://github.com/deveneskaracabay/Sudoku-Solver-With-Images/tree/master/Solution)**
 ulaşabilirsiniz.
 <br/>
