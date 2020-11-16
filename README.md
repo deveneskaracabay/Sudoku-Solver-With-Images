@@ -28,3 +28,46 @@ Bu klasoru bilgisayarınıza indirip komut satırını bu klasorde açıp
 ``pip install - r requirements.txt`` yazarak gerekli paketlere sahip olabilirsiniz.
 
 ## Programdan Görüntüler
+Programı çalıştırdığımızda bu ekranı görüntüleyeceğiz :
+<br/>
+![img1](https://github.com/deveneskaracabay/Sudoku-Solver-With-Images/blob/master/Images/1.png)
+<br/>
+<br/>
+**OPEN** butonuna basalım.
+<br/>
+![img2](https://github.com/deveneskaracabay/Sudoku-Solver-With-Images/blob/master/Images/2.png)
+<br/>
+<br/>
+Bu kısımda örnek olarak önceden hazırladığımız datasetteki 2.png dosyasıne seçeçeğiz.
+<br/>
+![img2](https://github.com/deveneskaracabay/Sudoku-Solver-With-Images/blob/master/trainingDataset/2.png)
+<br/>
+<br/>
+Dosyayı seçtiğimizde programımız çalışarak bize çıktıyı bu şekilde verecektir:
+<br/>
+![img3](https://github.com/deveneskaracabay/Sudoku-Solver-With-Images/blob/master/Images/3.png)
+<br/>
+<br/>
+Datasetteki **diğer sudoku örneklerine [buradan](https://github.com/deveneskaracabay/Sudoku-Solver-With-Images/tree/master/trainingDataset)**
+ulaşabilirsiniz.
+<br/>
+<br/>
+Datasetin tamamının **çözümlerine de [buradan](https://github.com/deveneskaracabay/Sudoku-Solver-With-Images/tree/master/Solution)**
+ulaşabilirsiniz.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
