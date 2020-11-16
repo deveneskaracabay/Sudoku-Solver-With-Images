@@ -8,6 +8,9 @@ import sys
 def error():    
     QMessageBox.about(Qmain,"Error","Please enter valid numbers")
 
+def error2():    
+    QMessageBox.about(Qmain,"Error","Please enter valid file")
+
 def getitem():
     matrix = [[0 for i in range(9)] for j in range(9)]
     try:
@@ -428,8 +431,10 @@ def openFile():
         "QFileDialog.getOpenFileName()", 
         options=options)
     if fileName:
-        img2text.solver(fileName)
-        return
+        matrix = img2text.solver(fileName)
+        if not matrix:
+            return error2()
+        return solution_func(matrix)
     else:
         return
 
@@ -523,8 +528,7 @@ def solution_func(matrix):
     else:
         error()
    
-
-
+   
 app = QApplication(sys.argv)
 Qmain = QMainWindow()
 ui = Ui_MainWindow()

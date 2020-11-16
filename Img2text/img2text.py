@@ -1,4 +1,5 @@
 import pytesseract, cv2, os, copy, shutil, sys
+from PIL import Image
 import numpy as np
 
 class Sudok():
@@ -366,19 +367,14 @@ def writeAnswer2IMG(imgname,path,xy,mat1,mat2):
     return path
 
 def showSolution(path):
-    img = cv2.imread(path)
-    cv2.namedWindow("Solution")
-
-    cv2.imshow("Solution",img)
-    
-    cv2.waitKey(0)
-
-    cv2.destroyWindow("Solution")
-
+    img = Image.open(path)
+    img.show(title="Solution")
 
 def solver(path):
-
-    dirName, xy, img_name = cropIMG(path)
+    try:
+        dirName, xy, img_name = cropIMG(path)
+    except:
+        return False
     zero2IMG(dirName)
     pathIMG = concatIMG(dirName)
     temp = transformIMG(pathIMG)
@@ -410,7 +406,7 @@ def solver(path):
     path = writeAnswer2IMG(img_name,path,xy,oldMatrix,solutionMatrix)
     removeFILES("temp")
     showSolution(path)
-    return True
+    return solutionMatrix
    
 
 if __name__=="__main__": 
