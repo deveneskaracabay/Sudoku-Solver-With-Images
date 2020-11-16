@@ -3,7 +3,7 @@
 <br/>
 
 ## Kısaca Algoritma
-<br/>
+
 1. Kullanıcı fotoğraf seçmek için **OPEN** butonuna basar.
 2. Seçtiği fotoğraf çözümlenebilmek için image binarization işlemi uygulanır.
 3. Bu fotoğraftaki sudokunun her bir karesi parçalanıp geçici bir klasore kaydedilir.
