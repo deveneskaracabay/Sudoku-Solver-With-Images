@@ -6,7 +6,7 @@
 Kullanıcı tarafından girilen bir sudoku fotoğrafının çözümünü gerçekleştirmek.
 <br/>
 
-## Kısaca Algoritma
+## Özet
 
 1. Kullanıcı fotoğraf seçmek için **OPEN** butonuna basar.
 2. Seçtiği fotoğraf çözümlenebilmek için image binarization işlemi uygulanır.
