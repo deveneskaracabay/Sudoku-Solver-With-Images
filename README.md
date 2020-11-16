@@ -42,7 +42,7 @@ Programı çalıştırdığımızda bu ekranı görüntüleyeceğiz :
 <br/>
 <br/>
 <br/>
-Bu kısımda örnek olarak önceden hazırladığımız datasetteki 2.png dosyasıne seçeçeğiz.
+Bu kısımda örnek olarak önceden hazırladığımız datasetteki 2.png dosyasını seçeçeğiz.
 <br/>
 <br/>
 ![img2](https://github.com/deveneskaracabay/Sudoku-Solver-With-Images/blob/master/trainingDataset/2.png)
