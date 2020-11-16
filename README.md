@@ -2,6 +2,11 @@
 #### Bu sayfada yalnızca fotoğraf ile çözümden bahsedeceğim. Önceki versiyonu hakkında bilgi almak istiyorsanız [buradan](https://github.com/deveneskaracabay/SudokuSolver) ulaşabilirsiniz.
 <br/>
 
+## Hedef
+<br/>
+Kullanıcı tarafından girilen bir sudoku fotoğrafının çözümünü gerçekleştirmek.
+<br/>
+
 ## Kısaca Algoritma
 
 1. Kullanıcı fotoğraf seçmek için **OPEN** butonuna basar.
