@@ -22,7 +22,7 @@ Kullanıcı tarafından girilen bir sudoku fotoğrafının çözümünü gerçek
 
 **Eğer 5. satırdaki işlemden sonra sudoku çözümü gerçeklenemezse, parçaladığımız 81 fotoğraf ayrı ayrı farklı konfigürasyonlarla okunup doğru matris bulunup tekrar çözüm gerçekleştiririz.** 
 
-## Gereklilikler
+## Gereksinimler
 
 Bu klasoru bilgisayarınıza indirip komut satırını bu klasorde açıp
 ``pip install -r requirements.txt`` yazarak gerekli paketlere sahip olabilirsiniz.
