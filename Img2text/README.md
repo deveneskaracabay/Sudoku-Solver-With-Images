@@ -4,6 +4,7 @@
 
 ## Sudok Sınıfı
 <br/>
+İçerisine **integer** veri tipinde 9*9 boyutunda bir matrix alır.
 
 ## cropIMG Fonksiyonu
 <br/>
