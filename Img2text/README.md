@@ -1,1 +1,2 @@
 
+# Fonksiyonların Özeti
