@@ -3,7 +3,7 @@
 <br/>
 
 ## Sudok Sınıfı
-İçerisine **integer** veri tipinde 9*9 boyutunda bir matrix alır.
+İçerisine **integer** veri tipinde 9*9 boyutunda bir matrix alır. Girilen bu matrixi geçerli bir sudoku olup olmadığını içerisinde bulunan **control** fonksiyonu sayesinde kontrol eder. Eğer geçerli bir sudoku ise cevabını bulmak için sınıfın içerisindeki **solve** fonksiyonuna gönderir ve ve çözümü geri döner.
 <br/>
 
 ## cropIMG Fonksiyonu
