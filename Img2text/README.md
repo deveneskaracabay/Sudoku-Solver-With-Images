@@ -7,7 +7,7 @@
 <br/>
 
 ## cropIMG Fonksiyonu
-içerisine sudoku fotoğrafının adresini alır. **temp** adında bir klasor olusturur. Aldığı **path** sayesinde sudok fotoğrafını okur. Fotoğrafa **Binarization** işlemi uygular.
+içerisine sudoku fotoğrafının adresini alır. **temp** adında bir klasor olusturur. Aldığı **path** sayesinde sudok fotoğrafını okur. Fotoğrafa **Binarization** işlemi uygular. Bu işlem sayesinde çizgiler keskinleşir. Daha sonra fotoğrafta kareleri arıyoruz. Buldugumuz 81 adet kareyi fotoğraftan kırpıp kaydediyoruz.
 <br/>
 
 ## zero2IMG Fonksiyonu
