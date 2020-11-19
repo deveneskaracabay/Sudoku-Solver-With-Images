@@ -7,6 +7,7 @@
 <br/>
 
 ## cropIMG Fonksiyonu
+içerisine sudoku fotoğrafının adresini alır. **temp** adında bir klasor olusturur. Aldığı **path** sayesinde sudok fotoğrafını okur. Fotoğrafa **Binarization** işlemi uygular.
 <br/>
 
 ## zero2IMG Fonksiyonu
