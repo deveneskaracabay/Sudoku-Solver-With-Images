@@ -11,6 +11,7 @@ içerisine sudoku fotoğrafının adresini alır. **temp** adında bir klasor ol
 <br/>
 
 ## zero2IMG Fonksiyonu
+Boş fotoğraflara 0 yazar
 <br/>
 
 ## concatIMG Fonksiyonu
