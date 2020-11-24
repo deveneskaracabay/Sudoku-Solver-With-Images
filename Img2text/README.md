@@ -11,7 +11,7 @@ içerisine sudoku fotoğrafının adresini alır. **temp** adında bir klasor ol
 <br/>
 
 ## zero2IMG Fonksiyonu
-Boş fotoğraflara 0 yazar
+Temp dosyasında kırpılan 81 adet fotoğrafı dolaşır. Eğer fotoğraf boş ise bunu rgb kodlarını kullanarak tespit eder. Tespit ettiği boş fotoğrafların ortalarına "0" yazar.
 <br/>
 
 ## concatIMG Fonksiyonu
