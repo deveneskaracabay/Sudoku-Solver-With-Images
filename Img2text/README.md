@@ -19,6 +19,7 @@ temp dosyasında bulunan tüm fotoğrafları birleştirir. Birleştirdiği bu fo
 <br/>
 
 ## transformIMG Fonksiyonu
+Bir üst fonksiyonda birleştirilen fotoğrafı **pytesseract** paketini kullanarak text haline getirir.
 <br/>
 
 ## txt2mat Fonksiyonu
