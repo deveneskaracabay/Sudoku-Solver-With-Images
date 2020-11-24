@@ -15,6 +15,7 @@ Temp dosyasında kırpılan 81 adet fotoğrafı dolaşır. Eğer fotoğraf boş 
 <br/>
 
 ## concatIMG Fonksiyonu
+temp dosyasında bulunan tüm fotoğrafları birleştirir. Birleştirdiği bu fotoğrafı kaydeder.
 <br/>
 
 ## transformIMG Fonksiyonu
